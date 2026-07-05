@@ -50,7 +50,8 @@ Script em **Batch (.bat)** para Windows que automatiza, via **winget** (Windows 
 Script Otimiza PC/
 ├── limpa.bat                 # Menu de otimização e manutenção do Windows
 ├── instala_ferramentas.bat   # Menu de instalação de ferramentas de trabalho (winget)
-├── README.md                 # Documentação do limpa.bat
+├── README.md                 # Resumo do projeto
+├── README_LIMPA.md           # Documentação do limpa.bat
 └── README_INSTALADOR.md      # Este arquivo — documentação do instala_ferramentas.bat
 ```
 
