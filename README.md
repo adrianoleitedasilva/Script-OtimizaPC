@@ -42,28 +42,9 @@ Script em **Batch (.bat)** para Windows que reúne, em um único menu interativo
 - **Tempo de execução**: operações como SFC, CHKDSK e desfragmentação podem demorar bastante dependendo do tamanho do disco e da quantidade de arquivos.
 - Este script **não substitui um antivírus** nem realiza reparos de hardware — ele apenas automatiza utilitários nativos já presentes no Windows.
 
-# 🛠️ Instalador de ferramentas de trabalho
+## 🛠️ Outro script deste projeto
 
-Além do `limpa.bat`, o projeto inclui o `instala_ferramentas.bat`, um menu interativo que instala programas comuns de desenvolvimento usando o **winget** (Windows Package Manager). Também deve ser executado como Administrador.
-
-| Nº  | Opção                                       | O que faz                                                                                                                           |
-| --- | ------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
-| 1   | Instalar Git                                | Instala o Git via winget (`Git.Git`).                                                                                               |
-| 2   | Instalar Node.js (LTS)                      | Instala a versão LTS do Node.js (`OpenJS.NodeJS.LTS`).                                                                              |
-| 3   | Instalar Visual Studio Code                 | Instala o VS Code (`Microsoft.VisualStudioCode`).                                                                                   |
-| 4   | Instalar Brave Browser                      | Instala o navegador Brave (`BraveSoftware.BraveBrowser`).                                                                           |
-| 5   | Instalar GitHub Desktop                     | Instala o GitHub Desktop (`GitHub.GitHubDesktop`).                                                                                  |
-| 6   | Instalar Obsidian                           | Instala o Obsidian (`Obsidian.Obsidian`).                                                                                           |
-| 7   | Instalar Discord                            | Instala o Discord (`Discord.Discord`).                                                                                              |
-| 8   | Instalar Winhance                           | Instala o Winhance (`memstechtips.Winhance`), ferramenta de otimização e debloat do Windows.                                        |
-| 9   | Instalar UniGetUI                           | Instala o UniGetUI (`Devolutions.UniGetUI`), interface gráfica para gerenciar pacotes do winget e outros gerenciadores.             |
-| 10  | Instalar/Habilitar WSL2                     | Executa `wsl --install` e define a versão padrão como 2 (`wsl --set-default-version 2`). Pode exigir reinicialização do computador. |
-| 11  | Instalar Docker Desktop                     | Instala o Docker Desktop (`Docker.DockerDesktop`), que usa o WSL2 como backend — recomenda-se instalar o WSL2 antes.                |
-| 12  | Instalar tudo (1‑11)                        | Executa todas as instalações acima em sequência.                                                                                    |
-| 13  | Verificar/instalar atualizações disponíveis | Lista os pacotes com atualização pendente (`winget upgrade`) e pergunta se deseja atualizar todos (`winget upgrade --all`).         |
-| 0   | Sair                                        | Encerra o script.                                                                                                                   |
-
-**Requisito**: o `winget` precisa estar disponível no sistema (já vem por padrão no Windows 10/11 atualizados). Caso não esteja, o script avisa para instalar o "App Installer" pela Microsoft Store.
+Este repositório também inclui o `instala_ferramentas.bat`, que instala ferramentas de trabalho (Git, Node.js, VS Code, Docker, etc.) via winget. Veja a documentação completa em [README_INSTALADOR.md](README_INSTALADOR.md).
 
 ## 🗂️ Estrutura do projeto
 
@@ -71,7 +52,8 @@ Além do `limpa.bat`, o projeto inclui o `instala_ferramentas.bat`, um menu inte
 Script Otimiza PC/
 ├── limpa.bat                 # Menu de otimização e manutenção do Windows
 ├── instala_ferramentas.bat   # Menu de instalação de ferramentas de trabalho (winget)
-└── README.md                 # Este arquivo
+├── README.md                 # Este arquivo — documentação do limpa.bat
+└── README_INSTALADOR.md      # Documentação do instala_ferramentas.bat
 ```
 
 ## 📄 Licença

@@ -2,13 +2,26 @@
 setlocal enabledelayedexpansion
 title Ferramenta de Otimizacao do Windows
 
-:: Verifica se esta rodando como administrador
-net session >nul 2>&1
-if %errorlevel% neq 0 (
-    echo Este script precisa ser executado como Administrador.
-    pause
-    exit /b 1
+:: Verifica privilegios de administrador sem depender de servicos do Windows
+:: nem do PowerShell (metodos anteriores podem falhar em alguns sistemas).
+>nul 2>&1 "%SYSTEMROOT%\system32\cacls.exe" "%SYSTEMROOT%\system32\config\system"
+if '%errorlevel%' NEQ '0' (
+    echo Solicitando privilegios de administrador...
+    goto UACPrompt
+) else (
+    goto GotAdmin
 )
+
+:UACPrompt
+echo Set UAC = CreateObject^("Shell.Application"^) > "%temp%\elevate_limpa.vbs"
+echo UAC.ShellExecute "%~s0", "", "", "runas", 1 >> "%temp%\elevate_limpa.vbs"
+"%temp%\elevate_limpa.vbs"
+del "%temp%\elevate_limpa.vbs" >nul 2>&1
+exit /b
+
+:GotAdmin
+pushd "%CD%"
+cd /d "%~dp0"
 
 :menu
 cls
