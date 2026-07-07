@@ -33,8 +33,9 @@ Script em **Batch (.bat)** para Windows que automatiza, via **winget** (Windows 
 | 9   | Instalar UniGetUI                             | Instala o UniGetUI (`Devolutions.UniGetUI`), interface gráfica para gerenciar pacotes do winget e outros gerenciadores. |
 | 10  | Instalar/Habilitar WSL2                       | Executa `wsl --install` e define a versão padrão como 2 (`wsl --set-default-version 2`). Pode exigir reinicialização do computador. |
 | 11  | Instalar Docker Desktop                       | Instala o Docker Desktop (`Docker.DockerDesktop`), que usa o WSL2 como backend — recomenda-se instalar o WSL2 antes (opção 10). |
-| 12  | Instalar tudo (1‑11)                          | Executa todas as instalações acima em sequência. |
-| 13  | Verificar/instalar atualizações disponíveis   | Lista os pacotes com atualização pendente (`winget upgrade`) e pergunta se deseja atualizar todos (`winget upgrade --all`). |
+| 12  | Instalar FFmpeg                               | Instala o FFmpeg (`Gyan.FFmpeg`), ferramenta de linha de comando para processamento de áudio e vídeo. |
+| 13  | Instalar tudo (1‑12)                          | Executa todas as instalações acima em sequência. |
+| 14  | Verificar/instalar atualizações disponíveis   | Lista os pacotes com atualização pendente (`winget upgrade`) e pergunta se deseja atualizar todos (`winget upgrade --all`). |
 | 0   | Sair                                          | Encerra o script. |
 
 ## ⚠️ Avisos importantes
@@ -42,7 +43,7 @@ Script em **Batch (.bat)** para Windows que automatiza, via **winget** (Windows 
 - **Privilégios de administrador**: necessários para a maioria das instalações e obrigatórios para o WSL2/Docker Desktop. O script solicita elevação automaticamente (UAC) caso não esteja rodando como Administrador.
 - **Docker Desktop e WSL2**: o Docker Desktop usa o WSL2 como backend. Recomenda-se instalar/habilitar o WSL2 (opção 10) antes do Docker (opção 11), e reiniciar o computador se for a primeira instalação de qualquer um dos dois.
 - **Conexão com a internet**: todas as instalações são baixadas pela internet através do winget — é necessário estar conectado.
-- **Tempo de execução**: a instalação de todas as ferramentas (opção 12) pode demorar bastante dependendo da velocidade da internet.
+- **Tempo de execução**: a instalação de todas as ferramentas (opção 13) pode demorar bastante dependendo da velocidade da internet.
 
 ## 🗂️ Estrutura do projeto
 

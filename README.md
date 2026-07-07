@@ -11,7 +11,7 @@ Conjunto de scripts em **Batch (.bat)** para Windows que automatizam tarefas do 
 | Script                     | O que faz                                                                                                                                                       | Documentação                                    |
 | -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------ |
 | `limpa.bat`                | Menu com as principais tarefas de manutenção, limpeza e diagnóstico do Windows: SFC, CHKDSK, cache DNS, arquivos temporários, cache do Windows Update, desfragmentação, logs de eventos, pontos de restauração, reinício de serviços e liberação de RAM. | [README_LIMPA.md](README_LIMPA.md)               |
-| `instala_ferramentas.bat`  | Menu que instala, via **winget**, ferramentas de trabalho comuns: Git, Node.js, VS Code, Brave, GitHub Desktop, Obsidian, Discord, Winhance, UniGetUI, WSL2 e Docker Desktop. | [README_INSTALADOR.md](README_INSTALADOR.md)     |
+| `instala_ferramentas.bat`  | Menu que instala, via **winget**, ferramentas de trabalho comuns: Git, Node.js, VS Code, Brave, GitHub Desktop, Obsidian, Discord, Winhance, UniGetUI, WSL2, Docker Desktop e FFmpeg. | [README_INSTALADOR.md](README_INSTALADOR.md)     |
 
 ## 🗂️ Estrutura do projeto
 

@@ -49,8 +49,9 @@ echo  8. Instalar Winhance
 echo  9. Instalar UniGetUI
 echo  10. Instalar/Habilitar WSL2
 echo  11. Instalar Docker Desktop
-echo  12. Instalar tudo (1-11)
-echo  13. Verificar/instalar atualizacoes disponiveis
+echo  12. Instalar FFmpeg
+echo  13. Instalar tudo (1-12)
+echo  14. Verificar/instalar atualizacoes disponiveis
 echo  0. Sair
 echo.
 set "opcao="
@@ -67,8 +68,9 @@ if "%opcao%"=="8"  (call :winhance  & echo. & pause & goto menu)
 if "%opcao%"=="9"  (call :unigetui  & echo. & pause & goto menu)
 if "%opcao%"=="10" (call :wsl2      & echo. & pause & goto menu)
 if "%opcao%"=="11" (call :docker    & echo. & pause & goto menu)
-if "%opcao%"=="12" (call :todas     & echo. & pause & goto menu)
-if "%opcao%"=="13" (call :checkupdates & echo. & pause & goto menu)
+if "%opcao%"=="12" (call :ffmpeg    & echo. & pause & goto menu)
+if "%opcao%"=="13" (call :todas     & echo. & pause & goto menu)
+if "%opcao%"=="14" (call :checkupdates & echo. & pause & goto menu)
 if "%opcao%"=="0" goto fim
 
 echo.
@@ -146,6 +148,12 @@ echo antes (opcao 10) e reinicie o computador se for a primeira instalacao.
 winget install --id Docker.DockerDesktop -e --source winget --accept-package-agreements --accept-source-agreements
 goto :eof
 
+:ffmpeg
+echo.
+echo [FFMPEG] Instalando FFmpeg...
+winget install --id Gyan.FFmpeg -e --source winget --accept-package-agreements --accept-source-agreements
+goto :eof
+
 :checkupdates
 echo.
 echo [ATUALIZACOES] Pacotes com atualizacao disponivel:
@@ -175,6 +183,7 @@ call :winhance
 call :unigetui
 call :wsl2
 call :docker
+call :ffmpeg
 echo.
 echo Instalacao concluida! Reinicie o computador se o WSL2/Docker exigirem.
 goto :eof
